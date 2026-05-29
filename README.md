@@ -61,7 +61,7 @@ ai-resume-analyzer/
 ## 1. 克隆项目
 
 ```bash
-git clone https://github.com/kkar112233/ai-resume-analyzer.git
+git clone https://github.com/KKAR112233/ai-resume-analyzer.git
 ```
 
 ---
@@ -168,4 +168,4 @@ DEEPSEEK_API_KEY=你的DeepSeekAPIKey
 
 # 作者
 
-GitHub: https://github.com/kkar112233
+GitHub: https://github.com/KKAR112233
