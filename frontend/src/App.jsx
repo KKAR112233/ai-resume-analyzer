@@ -13,7 +13,7 @@ const App = () => {
       setLoading(true);
       const fd = new FormData();
       fd.append("resume", file);
-      const { data } = await axios.post("http://localhost:3000/upload", fd);
+      const { data } = await axios.post("/upload", fd);
       setResult(data.result);
     } catch {
       alert("上传失败");
