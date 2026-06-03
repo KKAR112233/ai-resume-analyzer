@@ -1,171 +1,57 @@
-# AI Resume Analyzer
-一个基于 React + Node.js + Python + DeepSeek API 的 AI 简历分析项目。
-支持上传 PDF 简历，自动提取文本，并使用 AI 生成简历优化建议。
+# AI 简历分析器
 
----
+上传 PDF 简历，AI 自动分析并给出优化建议与面试题。
 
-# 项目功能
+## 主要文件
 
-* PDF 简历上传
-* Python 提取 PDF 文本
-* DeepSeek AI 简历分析
-* 前后端分离架构
-* React 现代化界面
-* OpenCode 辅助开发
-
----
-
-# 技术栈
-
-## Frontend
-* React
-* Vite
-* Axios
-
-## Backend
-* Node.js
-* Express
-
-## Python Service
-* FastAPI
-* pdfplumber
-
-## AI
-* DeepSeek API
-
----
-
-# 项目结构
-
-```bash
+```
 ai-resume-analyzer/
-│
-├── frontend/          # React 前端
-├── backend/           # Node.js 后端
-├── python-service/    # Python PDF 解析服务
+├── server.js            # 服务端入口（PDF 解析 + DeepSeek API + 静态文件服务）
+├── package.json         # 项目依赖与启动脚本
+├── .env.example         # API Key 配置模板
+├── .gitignore
+└── frontend/            # React 前端
+    └── src/
+        ├── App.jsx      # 主页面（上传、展示结果）
+        ├── App.css      # 页面样式
+        ├── index.css    # 全局样式
+        └── main.jsx     # React 入口
 ```
 
----
-
-# 环境要求
-
-请先安装：
-* Node.js 18+
-* Python 3.10+
-* Git
-
----
-
-# 项目启动步骤
-
-## 1. 克隆项目
+## 快速开始
 
 ```bash
-git clone https://github.com/KKAR112233/ai-resume-analyzer.git
-```
-
----
-
-## 2. 启动前端
-
-进入 frontend：
-
-```bash
-cd frontend
+# 1. 安装依赖
 npm install
-npm run dev
+
+# 2. 配置 API Key
+copy .env.example .env
+# 编辑 .env，填入你的 DeepSeek API Key
+
+# 3. 构建前端
+npm run build
+
+# 4. 启动服务
+npm start
 ```
 
-前端默认运行：
+浏览器打开 `http://localhost:3000`，上传 PDF 简历即可。
 
-```txt
-http://localhost:5173
-```
-
----
-
-## 3. 启动后端
-
-新开终端：
+## 开发
 
 ```bash
-cd backend
-npm install
-node server.js
+# 终端1：启动后端
+npm start
+
+# 终端2：启动前端（热更新）
+cd frontend && npm run dev
 ```
 
-后端默认运行：
+前端开发服务器自动代理 API 请求到后端，无需额外配置。
 
-```txt
-http://localhost:3000
-```
+## 技术栈
 
----
-
-## 4. 启动 Python PDF 服务
-
-新开终端：
-
-```bash
-cd python-service
-pip install -r requirements.txt
-uvicorn main:app --reload --port 8000
-```
-
-Python 服务默认运行：
-
-```txt
-http://127.0.0.1:8000
-```
-
----
-
-# DeepSeek API 配置
-
-在 backend 文件夹创建：
-
-```txt
-.env
-```
-
-添加：
-
-```env
-DEEPSEEK_API_KEY=你的DeepSeekAPIKey
-```
-
----
-
-# 使用流程
-
-1. 启动前后端和 Python 服务
-2. 打开前端页面
-3. 上传 PDF 简历
-4. 点击“开始分析”
-5. 获取 AI 简历优化建议
-
----
-
-# 项目亮点
-
-* 使用 OpenCode 辅助开发
-* 实现前后端联调
-* 支持 AI 文本分析
-* 支持 PDF 文件解析
-* 独立完成 GitHub 项目管理
-
----
-
-# 后续优化方向
-
-* 支持 DOCX 简历
-* 支持 AI 打分系统
-* 增加登录功能
-* 增加历史记录
-* 部署上线
-
----
-
-# 作者
-
-GitHub: https://github.com/KKAR112233
+- **前端**: React + Vite + Axios
+- **后端**: Node.js + Express
+- **PDF 解析**: pdf-parse
+- **AI**: DeepSeek API
